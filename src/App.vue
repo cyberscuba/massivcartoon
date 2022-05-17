@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <CommicHeader />
+  <CommicCards />
+  <CommicFooter />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+
+import { defineAsyncComponent } from 'vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    CommicHeader: defineAsyncComponent(() => import('@/components/CommicHeader.vue')),
+    CommicCards: defineAsyncComponent(() => import('@/components/CommicCards.vue')),
+    CommicFooter: defineAsyncComponent(() => import('@/components/CommicFooter.vue')),
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url(./assets/scss/app.scss);
+
 </style>
