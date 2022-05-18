@@ -4,8 +4,9 @@
     </div>
     <div class="title">
       <h1> Cheer up your day. </h1>
-      <h4>Swipe, click on the image, enjoy, then give it a star.</h4>
+      <h4>Slide the cartoons <strong>&lt;--  --></strong>. When you see a cartoon you like, click on it, read it, enjoy it. Then assign a star to the cartoon that you liked the most.</h4>
     </div>
+
 </template>
 
 <script>
@@ -16,6 +17,5 @@ export default {
 </script>
 
 <style>
-@import url(../assets/scss/header.scss);
 
 </style>

@@ -1,18 +1,20 @@
 <template>
-
 <Transition name="modal">
     <div v-if="show" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-body">
-            <slot name="body">
+            <div class="modal-header">
               <button
                 class="btn btn-primary btn-md active"
                 @click="$emit('close')">
               Close
               </button>
+            </div>
+            <slot name="body">
+              
               <div class="cartoon-image card3">
-                <img
+                <img class="img-autofit"
                     :src= " $store.state.imageCartoon"
                     alt="">
               </div>
@@ -22,11 +24,10 @@
       </div>
     </div>
   </Transition>
-
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'CommicsModal',
@@ -41,5 +42,5 @@ export default {
 </script>
 
 <style>
-@import url(../assets/scss/cartoonModal.scss);
+
 </style>

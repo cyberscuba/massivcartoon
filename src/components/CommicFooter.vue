@@ -34,9 +34,9 @@
           <div class="col-xs-12 col-md-2">
             <h6>Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="https://cyberscuba.github.io/">About</a></li>
-              <li><a href="mailto:charlysumo@gmail.com">Contact me</a></li>
-              <li><a href="tel:+0573108030240">+57308030240</a></li>
+              <li><a href='https://cyberscuba.github.io/'>About</a></li>
+              <li><a href='mailto:charlysumo@gmail.com'>Contact me</a></li>
+              <li><a href='tel:+0573108030240'>+57308030240</a></li>
             </ul>
           </div>
           <hr>
@@ -56,6 +56,5 @@ export default {
 };
 </script>
 <style>
-@import url(../assets/scss/footer.scss);
 
 </style>

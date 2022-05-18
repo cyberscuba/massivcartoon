@@ -1,7 +1,9 @@
+$moreImages: #28a745;
+$reloadImages: #0062cc;
 .card {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 500px 130px 80px;
+    grid-template-rows: 400px 130px 80px;
     grid-template-areas: "image" "text" "stats";
   
     border-radius: 18px;
@@ -46,7 +48,7 @@
 .card-stats {
   grid-area: stats;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr ;
   grid-template-rows: 1fr;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -79,8 +81,7 @@
 .card:hover {
   transform: scale(1.12);
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
-} */
-
+}
 /*card2*/
 .card-image.card2 {
 
@@ -114,37 +115,104 @@
     width: 500px;
     padding: 0 0px;
     left: 0%;
-  }
-  
-  .wrapper {
-      padding-top: 4%;
-  }
-  .row {
-      margin: 0 -5px;
-      position: absolute;
-      top: 20%;
-      left: 0%;
-      float:left;
-      }
-  
-  /* Clear floats after the columns */
-  .row:after {
+}
+.wrapper {
+    padding-top: 10%;
+}
+.row {
+    margin: 0 -5px;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    float:left;
+}  
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  .flicking-viewport {
-    transition: height 500ms;
-  }
-  .buttonMoreImages {
-    position: absolute;
-    top: 6%;
-    right: 2%
 }
+.flicking-viewport {
+    transition: height 500ms;
+}
+
 .counterStars {
   position: absolute;
-  top: 6%;
+  top: 1%;
   right: 18%;
   color: aliceblue;
   font-family:Arial, Helvetica, sans-serif;
+}
+.buttonsHeader {
+  position: absolute;
+  top: 6%; 
+  right: 0%;
+}
+
+.button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  transition: all ease 0.5s;
+  color:#fff;
+  &.button-show-stats {
+    background:$reloadImages;
+    margin-right:20px;
+    &:hover {
+      background: lighten($reloadImages, 15%);
+    }
+  }
+  &.button-more-images {
+    background: $moreImages;
+    margin-right:20px;
+    &:hover {
+      background: lighten($moreImages, 15%);
+    }
+  }
+  &:hover {
+    transition: all ease 0.5s;
+  }
+}
+
+.popup {
+  border: 2px solid #333;
+  border-radius: 4px;
+  min-width: 175px;
+  padding: 15px 0;
+  position: absolute;
+  right: 0;
+  transform: translate(200px, 0);
+  transition: all ease 0.5s;
+  &.popup-accept {
+    top: 10px;
+  }
+  &.popup-cancel {
+    bottom: 10px;
+  }
+
+  &.show {
+    transform: translate(0, 0);
+    transition: all ease 0.5s;
+  }
+}
+.stat.border {
+  border-radius: 0 0 10px 0;
+  padding: 0;
+}
+.img-autofit {
+  vertical-align: middle;
+    border-style: none;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+.modal-body {
+  margin: auto;
+  overflow-y: auto;
+  max-height: 600px;
 }

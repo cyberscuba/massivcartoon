@@ -11,6 +11,7 @@
         :padding="3"
         v-bind:star-size="18"
         v-model="rating"
+        @rating-selected="test(index)"
         @update:rating ="setRating"></star-rating>
 
     </div>
@@ -18,24 +19,41 @@
 
 <script>
 import StarRating from 'vue-star-rating';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'CommicsRatint',
   props: {
     msg: String,
+    index: null,
   },
   components: {
     StarRating,
   },
+  computed: {
+
+    ...mapState(['commics']),
+    rating: {
+      get() {
+        return this.rate;
+      },
+      set(val) {
+        this.rate = val;
+      },
+    },
+  },
   methods: {
+    ...mapActions(['countStarts', 'saveRating']),
     setRating(rating) {
       this.rating = rating;
-      this.$store.commit('countStars', rating);
+      this.countStarts(rating);
+      const cualification = { rating, index:this.index , num:this.commics[this.index].num};
+      this.saveRating(cualification);
     },
   },
   data() {
     return {
-      rating: 0,
+      rate: 0,
     };
   },
 };
