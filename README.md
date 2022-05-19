@@ -1,5 +1,5 @@
 # massiviancommics
-
+This project consists of querying a comic api, show image, title, comic number, each comic can be rated, runs under vuejs 3, using vuex.
 ## Project setup
 ```
 npm install
@@ -15,15 +15,3 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
